@@ -27,6 +27,7 @@
   <ItemGroup>
     <None Include="build\SemanticVersioning.MSBuild.props" />
     <None Include="build\SemanticVersioning.MSBuild.targets" />
+    <None Include="MyGet.bat" />
     <None Include="SemanticVersioning.MSBuild.Nuspec" />
   </ItemGroup>
   <ItemGroup>
