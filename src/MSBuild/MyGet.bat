@@ -1,1 +1,1 @@
-﻿%nuget% pack "src\MSBuild\SemanticVersioning.MSBuild.Nuspec" -Version %PackageVersion%
+﻿%nuget% pack "%SourcesPath%\src\MSBuild\SemanticVersioning.MSBuild.Nuspec" -Version %PackageVersion%
