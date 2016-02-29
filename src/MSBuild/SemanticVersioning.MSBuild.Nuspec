@@ -1,14 +1,22 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>Lex.SemanticVersioner</id>
+        <id>SemanticVersioning.MSBuild</id>
         <version>$version$</version>
         <authors>Lex Mitchell</authors>
+        <owners>Lex Mitchell</owners>
         <title>Version injection of DLL's based on the model described by SemVer.org methods</title>
         <description>Allows version numbers to be overridden from the build based on $SemanticVersion and the optional $Tag build variables. By Default it will modify AssemblyInfo but you can change this to another filename with $VersionFileName if you have a custom info file.</description>
         <language>en-US</language>
+        <copyright>Copyright © 2016.</copyright>
         <projectUrl>https://github.com/Lexcess</projectUrl>
         <iconUrl>https://github.com/Lexcess/SemanticVersioning.Build/blob/master/src/MSBuild/icon.png?raw=true</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
+  <depenedencies>
+    <group targetFramework="dotnet">
+      <dependency id="System.IO" version="4.0.10"/>
+      <dependency id="System.Runtime" version="4.0.20"/>
+    </group>
+  </depenedencies>
 </package>
