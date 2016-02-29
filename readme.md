@@ -1,0 +1,1 @@
+A project for adding SemanticVersioning to MSBuild Projects

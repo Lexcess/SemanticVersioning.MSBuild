@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Lex.SemanticVersioner</id>
+        <version>$version$</version>
+        <authors>Lex Mitchell</authors>
+        <title>Version injection of DLL's based on the model described by SemVer.org methods</title>
+        <description>Allows version numbers to be overridden from the build based on $SemanticVersion and the optional $Tag build variables. By Default it will modify AssemblyInfo but you can change this to another filename with $VersionFileName if you have a custom info file.</description>
+        <language>en-US</language>
+        <projectUrl>https://github.com/Lexcess</projectUrl>
+        <iconUrl></iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    </metadata>
+</package>

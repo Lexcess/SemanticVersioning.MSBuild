@@ -1,0 +1,21 @@
+﻿<Project InitialTargets="ApplySemanticVersion" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="ApplySemanticVersion"  Condition="'$(SemanticVersion)' != ''">
+    <ItemGroup>
+      <UnmodifedFile Include="@(Compile)" Condition="%(Filename) == 'AssemblyInfo'" />
+      <Compile Remove="**/AssemblyInfo.cs" />
+    </ItemGroup>
+    <Copy SourceFiles="@(UnmodifedFile)" DestinationFiles="$(IntermediateOutputPath)%(Identity)">
+      <Output TaskParameter="DestinationFiles" ItemName="ModifiedFile"/>
+    </Copy>
+    <PropertyGroup>
+      <UpdatedFileContents>
+        $([System.IO.File]::ReadAllText("%(ModifiedFile.FullPath)").Replace("0.0.0.0", "$(SemanticVersion)").Replace("1.0.0.0", "$(SemanticVersion)").TrimEnd()
+        )[assembly: System.Reflection.AssemblyInformationalVersion("$(FullSemanticVer)")]
+      </UpdatedFileContents>
+    </PropertyGroup>
+    <WriteLinesToFile File="%(ModifiedFile.FullPath)" Lines="$(UpdatedFileContents)" Overwrite="true" Encoding="Unicode"/>
+    <ItemGroup>
+      <Compile Include="@(ModifiedFile)" />
+    </ItemGroup>
+  </Target>
+</Project>
