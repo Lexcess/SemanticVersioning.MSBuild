@@ -12,11 +12,6 @@
     <projectUrl>https://github.com/Lexcess</projectUrl>
     <iconUrl>https://github.com/Lexcess/SemanticVersioning.Build/blob/master/src/MSBuild/icon.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <dependencies>
-      <group targetFramework="dotnet">
-        <dependency id="System.Resources.ResourceManager" version="4.0.0" />
-        <dependency id="System.Runtime" version="4.0.20" />
-      </group>
-    </dependencies>
+    <developmentDependency>true</developmentDependency>
   </metadata>
 </package>

@@ -30,7 +30,6 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="build\SemanticVersioning.MSBuild.props" />
     <None Include="build\SemanticVersioning.MSBuild.targets" />
-    <None Include="packages.config" />
     <None Include="SemanticVersioning.MSBuild.Nuspec" />
   </ItemGroup>
   <ItemGroup>
