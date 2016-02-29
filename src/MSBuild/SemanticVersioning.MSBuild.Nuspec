@@ -12,12 +12,12 @@
         <projectUrl>https://github.com/Lexcess</projectUrl>
         <iconUrl>https://github.com/Lexcess/SemanticVersioning.Build/blob/master/src/MSBuild/icon.png?raw=true</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <depenedencies>
-          <group targetFramework="dotnet">
+        <dependencies>
+        <group targetFramework="dotnet">
             <dependency id="System.IO" version="4.0.10"/>
             <dependency id="System.Runtime" version="4.0.20"/>
           </group>
-        </depenedencies>    
+        </dependencies>    
     </metadata>
 
 </package>
