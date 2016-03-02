@@ -8,10 +8,11 @@
     <ProjectGuid>{B7366EDF-A830-4CA7-A3E8-B0978A18AB93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MSBuild.CS.Test</RootNamespace>
-    <AssemblyName>MSBuild.CS.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>SemanticVersioning.MSBuild.CS.Test</RootNamespace>
+    <AssemblyName>SemanticVersioning.MSBuild.CS.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
