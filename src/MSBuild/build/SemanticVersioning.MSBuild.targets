@@ -1,5 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="ApplySemanticVersion"  Condition="'$(SemanticVersion)' != ''">
+  <Target Name="ApplySemanticVersion" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != ''">
+    <Message Text="Got here" Importance="high"/>
     <ItemGroup>
       <UnmodifedFile Include="@(Compile)" Condition="%(Filename) == '$(VersionFileName)'" />
       <Compile Remove="**/$(VersionFileName).cs" />
@@ -22,5 +23,7 @@
     <ItemGroup>
       <Compile Include="@(ModifiedFile)" />
     </ItemGroup>
+    <Message Text="$(VersionFileName)" Importance="high"/>
+    <Message Text="@(ModifiedFile)" Importance="high"/>
   </Target>
 </Project>

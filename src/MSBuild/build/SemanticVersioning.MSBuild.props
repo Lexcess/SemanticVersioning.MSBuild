@@ -4,9 +4,5 @@
     <Tag></Tag>
     <VersionFileName Condition="$(VersionFileName) == ''">AssemblyInfo</VersionFileName>
     <FullSemanticVer>$(SemanticVersion)$(Tag)</FullSemanticVer>
-    <CompileDependsOn>
-      ApplySemanticVersion;
-      $(CompileDependsOn);
-    </CompileDependsOn>
   </PropertyGroup>
 </Project>

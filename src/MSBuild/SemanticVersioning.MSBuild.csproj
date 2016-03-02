@@ -23,9 +23,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="build\SemanticVersioning.MSBuild.props" />
+    <None Include="build\SemanticVersioning.MSBuild.props">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="build\SemanticVersioning.MSBuild.targets" />
     <None Include="MyGet.bat" />
     <None Include="SemanticVersioning.MSBuild.Nuspec" />
