@@ -1,4 +1,4 @@
-﻿<Project InitialTargets="ApplySemanticVersion" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="ApplySemanticVersion"  Condition="'$(SemanticVersion)' != ''">
     <ItemGroup>
       <UnmodifedFile Include="@(Compile)" Condition="%(Filename) == '$(VersionFileName)'" />
@@ -8,10 +8,15 @@
       <Output TaskParameter="DestinationFiles" ItemName="ModifiedFile"/>
     </Copy>
     <PropertyGroup>
-      <UpdatedFileContents>
-        $([System.IO.File]::ReadAllText("%(ModifiedFile.FullPath)").Replace("0.0.0.0", "$(SemanticVersion)").Replace("1.0.0.0", "$(SemanticVersion)").TrimEnd()
-        )[assembly: System.Reflection.AssemblyInformationalVersion("$(FullSemanticVer)")]
-      </UpdatedFileContents>
+      <FileContents>$([System.IO.File]::ReadAllText("%(ModifiedFile.FullPath)"))</FileContents>
+      <UpdatedFileContents>$([System.Text.RegularExpressions.Regex]::Replace($(FileContents),
+        ".+?Assembly(|File|Informational)Version.+?\](\s+|)",
+        "",
+        System.Text.RegularExpressions.RegexOptions.IgnoreCase)
+        )
+[assembly: AssemblyVersion("$(FullSemanticVer)")]
+[assembly: AssemblyFileVersion("$(FullSemanticVer)")]
+[assembly: AssemblyInformationalVersion("$(FullSemanticVer)")]</UpdatedFileContents>
     </PropertyGroup>
     <WriteLinesToFile File="%(ModifiedFile.FullPath)" Lines="$(UpdatedFileContents)" Overwrite="true" Encoding="Unicode"/>
     <ItemGroup>

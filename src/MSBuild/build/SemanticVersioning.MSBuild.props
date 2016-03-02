@@ -1,6 +1,6 @@
 ﻿<Project TreatAsLocalProperty="SemanticVersion;Tag;VersionFileName" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SemanticVersion></SemanticVersion>
+    <SemanticVersion Condition="$(SemanticVersion) == ''">0.0.0</SemanticVersion>
     <Tag></Tag>
     <VersionFileName Condition="$(VersionFileName) == ''">AssemblyInfo</VersionFileName>
     <FullSemanticVer>$(SemanticVersion)$(Tag)</FullSemanticVer>
