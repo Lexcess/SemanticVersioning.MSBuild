@@ -15,8 +15,8 @@
         "",
         System.Text.RegularExpressions.RegexOptions.IgnoreCase)
         )
-[assembly: AssemblyVersion("$(FullSemanticVer)")]
-[assembly: AssemblyFileVersion("$(FullSemanticVer)")]
+[assembly: AssemblyVersion("$(SemanticVersion)")]
+[assembly: AssemblyFileVersion("$(SemanticVersion)")]
 [assembly: AssemblyInformationalVersion("$(FullSemanticVer)")]</UpdatedFileContents>
     </PropertyGroup>
     <WriteLinesToFile File="%(ModifiedFile.FullPath)" Lines="$(UpdatedFileContents)" Overwrite="true" Encoding="Unicode"/>
