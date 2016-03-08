@@ -8,7 +8,6 @@
       <Nuget Condition="Exists($(Nuget)) == 'false'">$(ProjectDir).NuGet\NuGet.exe</Nuget>
       <PackageVersion Condition="$(PackageVersion) == ''">0.0.0</PackageVersion>
     </PropertyGroup>
-    <Message Text="Got here" Importance="high"/>
     <Exec Command="&quot;$(Nuget)&quot; pack $(NuSpecFile) -Version $(PackageVersion) -output $(OutDir)" />
   </Target>
 </Project>
