@@ -1,4 +1,5 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="ApplySemanticVersion" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != ''">
     <ItemGroup>
       <UnmodifedFile Include="@(Compile)" Condition="%(Filename) == '$(VersionFileName)'" />
@@ -14,6 +15,7 @@
         "",
         System.Text.RegularExpressions.RegexOptions.IgnoreCase)
         )
+// Semantic Versions added by build.
 [assembly: AssemblyVersion("$(SemanticVersion)")]
 [assembly: AssemblyFileVersion("$(SemanticVersion)")]
 [assembly: AssemblyInformationalVersion("$(FullSemanticVer)")]</UpdatedFileContents>
@@ -22,7 +24,5 @@
     <ItemGroup>
       <Compile Include="@(ModifiedFile)" />
     </ItemGroup>
-    <Message Text="$(VersionFileName)" Importance="high"/>
-    <Message Text="@(ModifiedFile)" Importance="high"/>
   </Target>
 </Project>

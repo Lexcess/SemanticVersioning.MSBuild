@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NuSpecFile>$(ProjectDir)$(TargetName).nuspec</NuSpecFile>
+  </PropertyGroup>
+  <Target Name="CreateNuGetPackage" AfterTargets="Build;ReBuild">
+    <PropertyGroup>
+      <Nuget Condition="Exists($(Nuget)) == 'false'">$(ProjectDir).NuGet\NuGet.exe</Nuget>
+      <PackageVersion Condition="$(PackageVersion) == ''">0.0.0</PackageVersion>
+    </PropertyGroup>
+    <Message Text="Got here" Importance="high"/>
+    <Exec Command="&quot;$(Nuget)&quot; pack $(NuSpecFile) -Version $(PackageVersion) -output $(OutDir)" />
+  </Target>
+</Project>

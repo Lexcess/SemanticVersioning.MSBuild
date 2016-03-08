@@ -17,7 +17,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -30,15 +30,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="build\SemanticVersioning.MSBuild.targets" />
-    <None Include="MyGet.bat" />
     <None Include="SemanticVersioning.MSBuild.Nuspec" />
+    <None Include="SemanticVersioning.MSBuild.targets" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.png" />
-    <Content Include="BatchFileSetup.txt" />
+    <None Include=".nuget\nuget.exe" />
+    <None Include="icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="$(MSBuildThisFolder)SemanticVersioning.MSBuild.targets" />
 </Project>

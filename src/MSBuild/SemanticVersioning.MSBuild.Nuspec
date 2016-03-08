@@ -17,4 +17,7 @@
     <developmentDependency>true</developmentDependency>
     <tags>msbuild semver semantic versioning csproj assemblyinfo assemblyversion assemblyinformationalversion</tags>
   </metadata>
+  <files>
+    <file src="build\*.*" target="build" />
+  </files>
 </package>
