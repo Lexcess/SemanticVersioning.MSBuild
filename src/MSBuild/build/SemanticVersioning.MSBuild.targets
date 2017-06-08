@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="ApplySemanticVersion" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != ''">
+  
+  <Target Name="ApplySemanticVersion" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != '' And !Exists($(MSBuildThisFileDirectory)..\build\Microsoft.NET.Sdk.props)">
     <ItemGroup>
       <UnmodifedFile Include="@(Compile)" Condition="%(Filename) == '$(VersionFileName)'" />
       <Compile Remove="**/$(VersionFileName).cs" />
@@ -24,5 +25,12 @@
     <ItemGroup>
       <Compile Include="@(ModifiedFile)" />
     </ItemGroup>
+  </Target>
+  <Target Name="ApplySemanticVersion" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != '' And Exists($(MSBuildThisFileDirectory)..\build\Microsoft.NET.Sdk.props)">
+    <PropertyGroup>
+      <Version>$(FullSemanticVer)</Version>
+      <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
+      <FileVersion>$(SemanticVersion)</FileVersion>
+    </PropertyGroup>
   </Target>
 </Project>
