@@ -1,7 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFrameworks>netstandard1.4;Net461</TargetFrameworks>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <SemanticVersion>5.0.0</SemanticVersion>
+    <Tag>RC</Tag>
+  </PropertyGroup>
+  <Import Project="..\MSBuild\build\SemanticVersioning.MSBuild.props" />
+  <Import Project="..\MSBuild\build\SemanticVersioning.MSBuild.targets" />
+    <Target Name="DisplayMessages" AfterTargets="Build" >
+    <Message Importance="High" Text="Extension            = $(DefaultLanguageSourceExtension)" />
+    <Message Importance="High" Text="GenerateAssemblyInfo = $(GenerateAssemblyInfo)" />
+    <Message Importance="High" Text="Tag                  = $(Tag)" />
+    <Message Importance="High" Text="SemanticVersion      = $(SemanticVersion)" />
+  </Target>
 </Project>

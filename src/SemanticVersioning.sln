@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticVersioning.MSBuild", "MSBuild\SemanticVersioning.MSBuild.csproj", "{358705FF-02BC-4F78-A856-1364941D41EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild", "MSBuild\MSBuild.csproj", "{358705FF-02BC-4F78-A856-1364941D41EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.CS.Test", "MSBuild.CS.Test\MSBuild.CS.Test.csproj", "{B7366EDF-A830-4CA7-A3E8-B0978A18AB93}"
 EndProject
