@@ -48,14 +48,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\MSBuild\build\SemanticVersioning.MSBuild.targets" Condition="Exists('..\MSBuild\build\SemanticVersioning.MSBuild.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -65,10 +57,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
- <Target Name="DisplayMessages" AfterTargets="Build" >
-    <Message Importance="High" Text="Extension            = $(DefaultLanguageSourceExtension)" />
-    <Message Importance="High" Text="GenerateAssemblyInfo = $(GenerateAssemblyInfo)" />
-    <Message Importance="High" Text="Tag                  = $(Tag)" />
-    <Message Importance="High" Text="SemanticVersion      = $(SemanticVersion)" />
-  </Target>
 </Project>
