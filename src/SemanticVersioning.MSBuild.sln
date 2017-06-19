@@ -2,11 +2,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.CS.Test", "MSBuild.CS.Test\MSBuild.CS.Test.csproj", "{B7366EDF-A830-4CA7-A3E8-B0978A18AB93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.CS.Check", "MSBuild.CS.Test\MSBuild.CS.Check.csproj", "{B7366EDF-A830-4CA7-A3E8-B0978A18AB93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.CSCore.Test", "MSBuild.CSCore.Test\MSBuild.CSCore.Test.csproj", "{47DE8F0E-7859-4EE6-9118-256FE6F9855A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.CSCore.Check", "MSBuild.CSCore.Test\MSBuild.CSCore.Check.csproj", "{47DE8F0E-7859-4EE6-9118-256FE6F9855A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild", "MSBuild\MSBuild.csproj", "{9E4EB35A-2E91-491F-8A9E-C9C1C91AA750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.CSNuget.Test", "MSBuild.CSNuget.Test\MSBuild.CSNuget.Test.csproj", "{CE66F365-1228-48A8-850C-EAD340A14080}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,18 @@ Global
 		{9E4EB35A-2E91-491F-8A9E-C9C1C91AA750}.Release|x64.Build.0 = Release|Any CPU
 		{9E4EB35A-2E91-491F-8A9E-C9C1C91AA750}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E4EB35A-2E91-491F-8A9E-C9C1C91AA750}.Release|x86.Build.0 = Release|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Release|x64.Build.0 = Release|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE66F365-1228-48A8-850C-EAD340A14080}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
