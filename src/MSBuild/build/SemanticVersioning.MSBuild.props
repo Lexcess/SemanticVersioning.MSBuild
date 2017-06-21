@@ -2,12 +2,15 @@
 <Project TreatAsLocalProperty="SemanticVersion;Tag;VersionFileName;FullSemanticVer" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SemanticVersion Condition="$(SemanticVersion) == ''">0.0.0</SemanticVersion>
-    <Tag Condition="$(BuildVersion) == ''"></Tag>
+    <Tag Condition="$(Tag) != ''">-$(Tag)</Tag>
     <VersionFileName Condition="$(VersionFileName) == ''">AssemblyInfo</VersionFileName>
     <BuildVersion Condition="$(BuildVersion) == ''"></BuildVersion>
-    <BuildMetaVersion Condition="$(BuildVersion) != ''">+$(BuildVersion)</BuildMetaVersion>
-    <FullSemanticVer>$(SemanticVersion)$(Tag)</FullSemanticVer>
+    <BuildVersion Condition="$(BuildVersion) != ''">+$(BuildVersion)</BuildVersion>
+    <FullSemanticVer>$(SemanticVersion)$(Tag)$(BuildVersion)</FullSemanticVer>
     <GenerateAssemblyInfo Condition="$(GenerateAssemblyInfo) == ''">false</GenerateAssemblyInfo>
-    <version>$(SemanticVersion)</version>
+    <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
+    <AssemblyInformationalVersion>$(FullSemanticVer)</AssemblyInformationalVersion>
+    <FileVersion>$(SemanticVersion)</FileVersion>
+    <Version>$(SemanticVersion)</Version>
   </PropertyGroup>
 </Project>

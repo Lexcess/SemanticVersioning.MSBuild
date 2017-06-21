@@ -8,8 +8,8 @@
     <Copy SourceFiles="@(UnmodifedFile)" DestinationFiles="$(IntermediateOutputPath)%(Identity)">
       <Output TaskParameter="DestinationFiles" ItemName="ModifiedFile"/>
     </Copy>
-    <PropertyGroup>
-      <FileContents>$([System.IO.File]::ReadAllText("%(ModifiedFile.FullPath)"))</FileContents>
+    <PropertyGroup Condition="%(ModifiedFile.FullPath)" != ''>
+      <FileContentsv>$([System.IO.File]::ReadAllText("%(ModifiedFile.FullPath)"))</FileContents>
       <UpdatedFileContents>$([System.Text.RegularExpressions.Regex]::Replace($(FileContents),
         ".+?Assembly(|File|Informational)Version.+?\](\s+|)",
         "",
@@ -24,12 +24,5 @@
     <ItemGroup>
       <Compile Include="@(ModifiedFile)" />
     </ItemGroup>
-  </Target>
-  <Target Name="ApplySemanticVersionNetSdk" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != '' And $(GenerateAssemblyInfo)">
-    <PropertyGroup>
-      <Version>$(FullSemanticVer)</Version>
-      <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
-      <FileVersion>$(SemanticVersion)</FileVersion>
-    </PropertyGroup>
   </Target>
 </Project>
