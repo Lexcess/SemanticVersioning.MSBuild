@@ -1,8 +1,11 @@
 # SemanticVersioning.MSBuild
 
+![Downloads](https://img.shields.io/nuget/dt/SemanticVersioning.MSBuild.svg)  
+![Build Status](https://lexm.visualstudio.com/_apis/public/build/definitions/e6a58d77-f73b-4b58-b2d3-e1a08fc5b23d/6/badge)
+
 ## Introduction
 
-This is a project for injecting Semantic Versioning to binaries via MSBuild at compile time. It does **not** rely on PowerShell or MSBuild Community Tasks or any other package dependency.
+This is a project for injecting Semantic Versioning to binaries via MSBuild at compile time. It does **not** rely on PowerShell, MSBuild Community Tasks or any other package dependency.
 
 Currently this code works for 
 
