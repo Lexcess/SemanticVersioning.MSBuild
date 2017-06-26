@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
  <Target Name="ApplySemanticVersion" BeforeTargets="CoreCompile" Condition="'$(SemanticVersion)' != '' And $(GenerateAssemblyInfo) =='false'">
+   <PropertyGroup>
+     <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
+     <AssemblyInformationalVersion>$(FullSemanticVer)</AssemblyInformationalVersion>
+     <FileVersion>$(SemanticVersion)</FileVersion>
+     <Version>$(SemanticVersion)</Version>
+   </PropertyGroup>
     <ItemGroup>
       <UnmodifedFile Include="@(Compile)" Condition="%(Filename) == '$(VersionFileName)'" />
       <Compile Remove="**/$(VersionFileName).cs" />
