@@ -23,8 +23,8 @@
 [assembly: AssemblyFileVersion("$(SemanticVersion)")]
 [assembly: AssemblyInformationalVersion("$(FullSemanticVer)")]</UpdatedFileContents>
     </PropertyGroup>
-    <WriteLinesToFile File="%(ModifiedFile.FullPath)" Lines="$(UpdatedFileContents)" Overwrite="true" Encoding="Unicode"/>
-    <ItemGroup>
+    <WriteLinesToFile Condition="$(ModifiedFileFullPath) != ''" File="$(ModifiedFileFullPath)" Lines="$(UpdatedFileContents)" Overwrite="true" Encoding="Unicode"/>
+    <ItemGroup Condition="$(ModifiedFileFullPath) != ''">
       <Compile Include="@(ModifiedFile)" />
     </ItemGroup>
   </Target>
