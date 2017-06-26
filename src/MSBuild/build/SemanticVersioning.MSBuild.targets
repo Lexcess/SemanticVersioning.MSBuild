@@ -8,7 +8,7 @@
     <Copy SourceFiles="@(UnmodifedFile)" DestinationFiles="$(IntermediateOutputPath)%(Identity)">
       <Output TaskParameter="DestinationFiles" ItemName="ModifiedFile"/>
     </Copy>
-    <PropertyGroup Condition="%(ModifiedFile.FullPath) != ''">
+    <PropertyGroup>
       <ModifiedFileFullPath>%(ModifiedFile.FullPath)</ModifiedFileFullPath>
     </PropertyGroup>     
     <PropertyGroup Condition="$(ModifiedFileFullPath) != ''">
