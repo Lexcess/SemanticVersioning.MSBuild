@@ -4,9 +4,9 @@
     <SemanticVersion Condition="$(SemanticVersion) == ''">0.0.0</SemanticVersion>
     <Tag Condition="$(Tag) != ''">-$(Tag)</Tag>
     <VersionFileName Condition="$(VersionFileName) == ''">AssemblyInfo</VersionFileName>
-    <BuildVersion Condition="$(BuildVersion) == ''"></BuildVersion>
-    <BuildVersion Condition="$(BuildVersion) != ''">+$(BuildVersion)</BuildVersion>
-    <FullSemanticVer>$(SemanticVersion)$(Tag)$(BuildVersion)</FullSemanticVer>
+    <BuildLabel Condition="$(BuildLabel) == ''"></BuildLabel>
+    <BuildLabel Condition="$(BuildLabel) != ''">+$(BuildLabel)</BuildLabel>
+    <FullSemanticVer>$(SemanticVersion)$(Tag)$(BuildLabel)</FullSemanticVer>
     <GenerateAssemblyInfo Condition="$(GenerateAssemblyInfo) == ''">false</GenerateAssemblyInfo>
     <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
     <AssemblyInformationalVersion>$(FullSemanticVer)</AssemblyInformationalVersion>

@@ -9,7 +9,10 @@
       <Output TaskParameter="DestinationFiles" ItemName="ModifiedFile"/>
     </Copy>
     <PropertyGroup Condition="%(ModifiedFile.FullPath) != ''">
-      <FileContents>$([System.IO.File]::ReadAllText("%(ModifiedFile.FullPath)"))</FileContents>
+      <ModifiedFileFullPath>%(ModifiedFile.FullPath)</ModifiedFileFullPath>
+    </PropertyGroup>     
+    <PropertyGroup Condition="$(ModifiedFileFullPath) != ''">
+      <FileContents>$([System.IO.File]::ReadAllText($(ModifiedFileFullPath)))</FileContents>
       <UpdatedFileContents>$([System.Text.RegularExpressions.Regex]::Replace($(FileContents),
         ".+?Assembly(|File|Informational)Version.+?\](\s+|)",
         "",
