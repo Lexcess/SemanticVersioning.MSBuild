@@ -9,5 +9,8 @@
     <FullSemanticVer>$(SemanticVersion)$(Tag)$(BuildLabel)</FullSemanticVer>
     <VersionPrefix>$(SemanticVersion)</VersionPrefix>
     <VersionSuffix>$(Tag)$(BuildLabel)</VersionSuffix>
+    <Version>$(FullSemanticVer)</Version>
+    <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
+    <FileVersion>$(SemanticVersion)</FileVersion>
   </PropertyGroup>
 </Project>
