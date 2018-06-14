@@ -9,7 +9,7 @@
     <description>Allows semantic versioning style fields to be injected into your assemblies via a $SemanticVersion property (MSBuild command line parameter or added to your csproj).</description>
     <summary>Assembly version numbers (including file and informational) will be overridden from the build based on $SemanticVersion and the optional $Tag build variables. By Default it will look for AssemblyInfo but you can change this to another filename (omitting extension) with $VersionFileName if you have a custom info file. Typically you would leave local builds at version 1.0.0.0 and inject the parameters on a build server. By default local builds will output to 0.0.0 usually this is fine), but you can set a version via the same properties as before being added to your command line or csproj file. No reliance on PowerShell or MSBuild Community Tasks</summary>
     <language>en-US</language>
-    <copyright>Copyright © 2017.</copyright>
+    <copyright>Copyright © 2018.</copyright>
     <projectUrl>https://github.com/Lexcess/SemanticVersioning.MSBuild</projectUrl>
     <licenseUrl>https://raw.githubusercontent.com/Lexcess/SemanticVersioning.MSBuild/master/License</licenseUrl>
     <iconUrl>https://raw.githubusercontent.com/Lexcess/SemanticVersioning.MSBuild/master/src/MSBuild/icon.png</iconUrl>
