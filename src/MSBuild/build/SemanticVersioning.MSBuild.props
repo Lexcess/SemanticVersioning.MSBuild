@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SemanticVersion Condition="$(SemanticVersion) == ''">0.0.0</SemanticVersion>
-    <Tag Condition="$(Tag) != ''">-$(Tag)</Tag>
-    <VersionFileName Condition="$(VersionFileName) == ''">AssemblyInfo</VersionFileName>
-    <BuildLabel Condition="$(BuildLabel) == ''"></BuildLabel>
-    <BuildLabel Condition="$(BuildLabel) != ''">+$(BuildLabel)</BuildLabel>
+    <SemanticVersion Condition="'$(SemanticVersion)' == ''">0.0.0</SemanticVersion>
+    <Tag             Condition="'$(Tag)' != ''">-$(Tag)</Tag>
+    <VersionFileName Condition="'$(VersionFileName)' == ''">AssemblyInfo</VersionFileName>
+    <BuildLabel      Condition="'$(BuildLabel)' == ''"></BuildLabel>
+    <BuildLabel      Condition="'$(BuildLabel)' != ''">+$(BuildLabel)</BuildLabel>
     <FullSemanticVer>$(SemanticVersion)$(Tag)$(BuildLabel)</FullSemanticVer>
     <VersionPrefix>$(SemanticVersion)</VersionPrefix>
     <VersionSuffix>$(Tag)$(BuildLabel)</VersionSuffix>
-    <GenerateAssemblyInfo Condition="$(GenerateAssemblyInfo) == ''">false</GenerateAssemblyInfo>
   </PropertyGroup>
 </Project>
