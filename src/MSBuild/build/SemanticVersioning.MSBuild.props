@@ -7,6 +7,8 @@
     <BuildLabel Condition="$(BuildLabel) == ''"></BuildLabel>
     <BuildLabel Condition="$(BuildLabel) != ''">+$(BuildLabel)</BuildLabel>
     <FullSemanticVer>$(SemanticVersion)$(Tag)$(BuildLabel)</FullSemanticVer>
+    <VersionPrefix>$(SemanticVersion)</VersionPrefix>
+    <VersionSuffix>$(Tag)$(BuildLabel)</VersionSuffix>
     <GenerateAssemblyInfo Condition="$(GenerateAssemblyInfo) == ''">false</GenerateAssemblyInfo>
   </PropertyGroup>
 </Project>
